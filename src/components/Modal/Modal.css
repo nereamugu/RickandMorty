@@ -1,0 +1,6 @@
+.popup__container{
+    width: 28%;
+    margin: 10px;
+    min-width: 180px;
+    background-color: rgb(255, 255, 255);
+}

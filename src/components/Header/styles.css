@@ -1,0 +1,22 @@
+.header__background {
+    background-color: black;
+    height: 10%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0 10px;
+}
+
+.header__logo {
+    color: white;
+}
+
+.header__navigation {
+    display: flex;
+
+}
+
+.navigation__item {
+    color: white;
+    margin-left: 5px;
+}

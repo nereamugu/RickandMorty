@@ -1,0 +1,38 @@
+.footer__container {
+    background-color: black;
+    height: 10%;
+  
+    padding: 30px;
+    padding-bottom: 10px !important;
+}
+
+.row1{
+    display: flex;
+    justify-content: space-between;
+}
+
+.footer__logo {
+    color: white;
+}
+
+.footer__item{
+    display: flex;
+    color: white;
+    justify-content:right;
+
+}
+
+.row2{
+    display: flex;
+    justify-content: center;
+}
+
+.footer__item2{
+
+   
+    display: flex;
+    color: white;
+    
+
+}
+
