@@ -1,77 +1,109 @@
 // Importando.
-import React, { useCallback, useState, useEffect } from "react"
-import Header from "../../components/Header"
-import SearchBar from "../../components/SearchBar"
-import Card from "../../components/Card"
-import "./style.css"
-import Pagination from "../../components/Pagination"
-import modal from "../../components/Modal/modal"
-import Footer from "../../components/footer"
+import React, { useCallback, useState, useEffect } from 'react';
+
+import Card from '../../components/Card';
+import './style.css';
+import Pagination from '../../components/Pagination';
+import Modal from '../../components/Modal/modal';
+import Footer from '../../components/footer';
+import SearchBar from '../../components/SearchBar';
+import Filters from '../../components/Filters';
 
 // Componente funcional.
 const CharacterList = () => {
-    const [inputText, setInputText] = useState();
-    const [characters, setCharacters] = useState([])
-    const [ModalOpen, setmodalOpen] = useState(false)
-    const [page, setPage] = useState(1)
+	const [ inputText, setInputText ] = useState(undefined);
+	const [ filter, setFilter ] = useState(undefined);
+	const [ characters, setCharacters ] = useState([]);
+	const [ modalOpen, setModalOpen ] = useState(false);
+	const [ selectedCharacter, setSelectedCharacter ] = useState();
+	const [ page, setPage ] = useState(1);
 
+	const onPagination = (type) => {
+		if (type === 'previous' && page > 1) {
+			setPage(page - 1);
+		}
 
+		if (type === 'next' && page < characters.info.pages) {
+			setPage(page + 1);
+		}
+	};
 
-    const onPagination = (type) => {
-        if (type === "previous" && page > 1) {
-            setPage(page - 1)
-        }
+	const getInputText = (text) => {
+		if (text) {
+			setInputText(text);
+		}
+	};
 
+	const getFilters = (filter) => {
+		switch (filter) {
+			case 'vivo':
+				setFilter(`status=alive`);
+				break;
+			case 'muerto':
+				setFilter(`status=dead`);
+				break;
+			case 'hombre':
+				setFilter(`gender=male`);
+				break;
+			default:
+				console.log('No encontré nada');
+		}
+	};
 
-        if (type === "next" && page < (characters.info.pages)) {
+	const queryByInputText = useCallback(
+		async () => {
+			const query = await fetch(
+				`https://rickandmortyapi.com/api/character/?name=${inputText}&page=${page}`,
+				{
+					method: 'GET'
+				}
+			);
 
-            setPage(page + 1)
-        }
-    }
+			setCharacters(await query.json());
+		},
+		[ inputText, page, filter ]
+	);
 
-    const getInputText = (text) => {
-        if (text) {
-            setInputText(text)
-        }
-    }
+	useEffect(
+		() => {
+			queryByInputText();
+		},
+		[ queryByInputText ]
+	);
 
-    const queryByInputText = useCallback(async () => {
-        const query = await fetch(`https://rickandmortyapi.com/api/character/?name=${inputText}&page=${page}`, {
-            method: "GET",
-        })
+	const handleModal = (value) => {
+		setModalOpen(value);
+	};
 
-        setCharacters(await query.json());
+	return (
+		<div className="character-list__container">
+			<SearchBar getInputText={getInputText} />
+			<Filters getFilters={getFilters} />
+			<div style={{ display: 'flex', flexWrap: 'wrap', justifyContent: 'center' }}>
+				{characters &&
+					characters.results &&
+					characters.results.map((character) => {
+						return (
+							<Card
+								character={character}
+								onClick={() => {
+									setSelectedCharacter(character);
+									handleModal(true);
+								}}
+							/>
+						);
+					})}
+			</div>
 
+			{modalOpen === true && (
+				<Modal selectedCharacter={selectedCharacter} handleClick={() => handleModal(false)} />
+			)}
 
-
-    }, [inputText, page])
-
-    useEffect(() => {
-        queryByInputText();
-    }, [queryByInputText]);
-
-
-const handleModal = (value) =>{
-    setmodalOpen(value)
-
-}
-
-    return (<div className="character-list__container">
-        <Header />
-        <SearchBar getInputText={getInputText} />
-        <div style={{ display: "flex", flexWrap: "wrap", justifyContent: "center" }}>
-            {characters && characters.results && characters.results.map((character) => { return <Card character={character} onClick={ ( ) => handleModal(true)} /> })}
-        </div>
-
-        { 
-        ModalOpen === true && <modal handleClick= {() => handleModal(false)}/>
-        }
-
-        <Pagination page={page} onPagination={onPagination} />
-        <Footer />
-
-    </div>)
-}
+			<Pagination page={page} onPagination={onPagination} />
+			<Footer />
+		</div>
+	);
+};
 
 // Exportar
-export default CharacterList
+export default CharacterList;
