@@ -1,6 +1,19 @@
-.popup__container{
-    width: 28%;
-    margin: 10px;
+.popup__background {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    top: 0px;
+    background-color: rgba(0, 0, 0, 0.42);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.popup__container {
+
+
+    width: 500px;
     min-width: 180px;
     background-color: rgb(255, 255, 255);
+
 }

@@ -9,6 +9,7 @@ const SearchBar = (props) => {
     }, [text]);
 
     return (
+        
         <div className="search-bar__container">
             <h3 className="search-bar__title"> Buscador de personajes</h3>
             <input className="search-bar__input"
@@ -16,6 +17,7 @@ const SearchBar = (props) => {
                 value={text}
                 onChange={(event) => setText(event.target.value)} />
         </div>
+        
 
     );
 

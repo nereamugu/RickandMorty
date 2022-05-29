@@ -7,8 +7,11 @@
     padding: 0 10px;
 }
 
-.header__logo {
+.header__logo img{
     color: white;
+    height: 10%;
+    width: 10%;
+    /* background: url(/src/images/logo.png) center center no-repeat; */
 }
 
 .header__navigation {

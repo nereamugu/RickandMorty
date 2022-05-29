@@ -36,6 +36,9 @@ const CharacterList = () => {
 
 	const getFilters = (filter) => {
 		switch (filter) {
+			case 'todos':
+				setFilter(`characters=all`);
+				break;
 			case 'vivo':
 				setFilter(`status=alive`);
 				break;
@@ -44,6 +47,9 @@ const CharacterList = () => {
 				break;
 			case 'hombre':
 				setFilter(`gender=male`);
+				break;
+			case 'mujer':
+				setFilter(`gender=female`);
 				break;
 			default:
 				console.log('No encontré nada');

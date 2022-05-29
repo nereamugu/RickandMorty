@@ -1,28 +1,26 @@
-import React from "react";
+import React from 'react';
 
-import "./Modal.css";
+import './Modal.css';
 
-
-    const modal = (props) => {
-    
-    
+const Modal = (props) => {
+	const { name, status, species, gender } = props.selectedCharacter;
 
 
-    return(
-        <div className="popup__container">
-        <div className="popup__containerTitulo">
-        <span onClick={() => props.handleClick()} > X</span>
-        <h3 className="popup__title"> Ficha técnica</h3>
-        </div>
-        <p className="popup__nombre"> props.character.name</p>
-        <p className="popup__estado"> vivo</p>
-        <p className="popup__especie">Humano</p>
-        <p className="popup__tipo"> X</p>
-        <p className="popup__genero"> Masculino</p>
-       
-    </div>
+	return (
+		<div className="popup__background" onClick={() => props.handleClick()}>
+			<div className="popup__container">
+				<div className="popup__containerTitulo">
+					<span> X</span>
+					<h3 className="popup__title"> Ficha técnica</h3>
+				</div>
+				<p className="popup__nombre"> {name}</p>
+				<p className="popup__estado"> {status}</p>
+				<p className="popup__especie">{species}</p>
+				<p className="popup__tipo"> X</p>
+				<p className="popup__genero"> {gender}</p>
+			</div>
+		</div>
+	);
+};
 
-    );
-}
-
-export default modal;
+export default Modal;

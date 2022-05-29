@@ -1,0 +1,15 @@
+.ContainerFilter{
+    text-align: center ;
+    margin-bottom: 10px;
+
+}
+.ButtonFilter{
+    background: none;
+    color: white;
+}
+
+.ButtonFilter:focus{
+    
+    /* text-decoration: underline; */
+    border-bottom: 2px solid white;
+}
