@@ -18,7 +18,6 @@ const SearchBar = (props) => {
                 onChange={(event) => setText(event.target.value)} />
         </div>
         
-
     );
 
 }

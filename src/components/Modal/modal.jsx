@@ -3,7 +3,7 @@ import React from 'react';
 import './Modal.css';
 
 const Modal = (props) => {
-	const { name, status, species, gender } = props.selectedCharacter;
+	const { name, status, species, gender} = props.selectedCharacter;
 
 
 	return (
@@ -16,8 +16,8 @@ const Modal = (props) => {
 				<p className="popup__nombre"> {name}</p>
 				<p className="popup__estado"> {status}</p>
 				<p className="popup__especie">{species}</p>
-				<p className="popup__tipo"> X</p>
 				<p className="popup__genero"> {gender}</p>
+                
 			</div>
 		</div>
 	);

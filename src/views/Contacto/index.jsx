@@ -1,5 +1,7 @@
 import React, { useCallback, useState, useEffect } from "react"
 import "./styles.css"
+import Footer from '../../components/footer';
+import contacto from '../../images/contacto-image.jpg';
 
 const Contact = () => {
 
@@ -20,7 +22,12 @@ const Contact = () => {
 
     return(
         <div>
+            <div className="contact-header__container">
             <h2>Página de contacto</h2>
+            </div>
+
+            <div className="form__container">
+            <div className="formulario__columna1">
             <form>
                 <input 
                 type="text"
@@ -40,8 +47,16 @@ const Contact = () => {
                  
 
             </form>
+            </div>
+            <div className="formulario__columna2">
+                <img src={contacto} alt="" />
+            </div>
+            </div>
+            <Footer />
         </div>
+        
     )
+    
 
 };
 
