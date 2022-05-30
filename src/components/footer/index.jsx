@@ -1,14 +1,19 @@
 import React from "react"
 import "./styles.css"
+import logo from '../../images/logo.png';
 
 
 const Footer = () => {
     return (<div className="footer__container">
         <div className="row1">
-        <div className="footer__logo">Logo</div>
+        <div className="footer__logo"><img src={logo}alt=""/></div>
         <div className="footer__navigation">
-            <p className="footer__item"> Rick&Morty</p>
-            <p className="footer__item"> Contacto</p>
+            <p className="footer__item"> Rick&Morty@info.com</p>
+            <div className="footer__item"> 
+            <a href=""><i class="bi bi-instagram icono"></i></a>
+            <a href=""><i class="bi bi-facebook icono"></i></a> 
+            <a href=""><i class="bi bi-twitter icono"></i></a> 
+              </div>
         </div>
         </div>
         <hr />

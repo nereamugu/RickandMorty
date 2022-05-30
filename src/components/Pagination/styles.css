@@ -2,4 +2,15 @@
     width: 100%;
     display: flex;
     justify-content: center;
+    margin-top: 20px;
+    margin-bottom: 20px;
+}
+
+.pagination__container button{
+    background-color: white;
+    padding: 5px;
+    padding-left: 10px;
+    padding-right: 10px;
+    border-radius: 10px;
+    margin-left:15px ;
 }

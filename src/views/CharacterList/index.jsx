@@ -1,4 +1,4 @@
-// Importando.
+// Importando
 import React, { useCallback, useState, useEffect } from 'react';
 
 import Card from '../../components/Card';
@@ -9,7 +9,7 @@ import Footer from '../../components/footer';
 import SearchBar from '../../components/SearchBar';
 import Filters from '../../components/Filters';
 
-// Componente funcional.
+// Componente funcional
 const CharacterList = () => {
 	const [ inputText, setInputText ] = useState(undefined);
 	const [ filter, setFilter ] = useState(undefined);

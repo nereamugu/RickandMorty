@@ -6,6 +6,9 @@
 .ButtonFilter{
     background: none;
     color: white;
+    margin-right: 9px;
+    font-size: 1rem;
+    
 }
 
 .ButtonFilter:focus{

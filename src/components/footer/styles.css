@@ -11,20 +11,32 @@
     justify-content: space-between;
 }
 
-.footer__logo {
+.footer__logo img{
     color: white;
+    height: 80%;
+    width: 20%;
 }
+
+.icono{
+    margin-left: 20px;
+    color: white;
+   
+}
+
 
 .footer__item{
     display: flex;
     color: white;
     justify-content:right;
+    margin-top: 15px;
 
 }
 
 .row2{
     display: flex;
     justify-content: center;
+    margin-top: 20px;
+    margin-bottom: 20px;
 }
 
 .footer__item2{

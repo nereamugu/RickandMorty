@@ -11,6 +11,11 @@
   margin-bottom: 20px;
 }
 
+.contact-header__container h2{
+  font-size: 2rem;
+  font-weight: 700;
+}
+
 
 *{
 margin: 0;
@@ -21,7 +26,7 @@ font-family: 'Roboto', sans-serif;
 }
 
 body{
-background: url(/src/images/contacto-image.jpg) repeat top center;
+background: url(/src/images/cielo.jpg) repeat top center;
 background-size: cover;
 height: 100%;
 
@@ -33,7 +38,7 @@ height: 100%;
 display: flex;
 align-items: center;
 justify-content: center;
-padding: 100px;
+padding: 60px;
 }
 
 
@@ -44,7 +49,7 @@ left: 50%;
 transform: translate(-50%, -50%); */
 
 max-width: 550px;
-background: rgba(0,0,0,0.8);
+background: rgba(255, 255, 255, 0.602);
 padding: 30px;
 border-radius: 5px;
 box-shadow: 0 0 10px rgba(0,0,0,0.3);
@@ -61,28 +66,48 @@ display: flex;
 display: flex;
 flex-direction: column;
 margin-right: 4%;
+
 }
 
 .input-fields,
 .msg{
 width: 48%;
+
 }
+
+input, textarea{
+  background-color: #000000;
+  color: white;
+  margin-top: 10px;
+  border-radius: 5px;
+  padding: 5px;
+}
+
 
 .input-fields .input,
 .msg textarea{
 margin: 10px 0;
 background: transparent;
 border: 0px;
-border-bottom: 2px solid #c5ecfd;
+border-bottom: 2px solid #000000;
 padding: 10px;
-color: #c5ecfd;
+color: #ffffff;
 width: 100%;
+}
+
+.mensaje h3{
+  color: white;
+}
+
+.mensaje{
+ 
+  text-align: center;
 }
 
 .msg textarea{
 height: 212px;
 min-width: 300px;
-background-color: rgb(255, 255, 255);
+background-color: rgb(0, 0, 0);
 }
 
 ::-webkit-input-placeholder {
@@ -99,7 +124,7 @@ color: #c5ecfd;
 }
 
 .btn {
-background: #39b7dd;
+background: #20787e;
 text-align: center;
 padding: 15px;
 border-radius: 5px;

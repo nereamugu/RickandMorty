@@ -1,7 +1,6 @@
 import React, { useCallback, useState, useEffect } from "react"
 import "./styles.css"
 import Footer from '../../components/footer';
-import contacto from '../../images/contacto-image.jpg';
 
 const Contact = () => {
 
@@ -25,8 +24,12 @@ const Contact = () => {
             <div className="contact-header__container">
             <h2>Página de contacto</h2>
             </div>
+            <div className="mensaje">
+                <h3>Escríbenos un mensaje</h3>
+                </div>
 
             <div className="contenedor">
+                
             <div className="contenedor__formulario">
             <div className="contact-form">
             
@@ -37,7 +40,7 @@ const Contact = () => {
                 type="text"
                 name="Nombre"
                 className="msg"
-                placeholder="Nombre y apellidos"
+                placeholder="Nombre "
                 onBlur={(e) => handleForm(e)} 
                 /><br />
 
@@ -55,12 +58,12 @@ const Contact = () => {
                 type="email"
                 name= "email"
                 className="msg"
-                placeholder="mensajae"
+                placeholder="Correo"
                 onBlur={(e) => handleForm(e)}
                 /><br />
 
                 <div className="msg">
-                <textarea name="Mensjae"  cols="30" rows="30" onBlur={(e) => handleForm(e)}></textarea><br />
+                <textarea name="Mensjae" placeholder="Mensaje" cols="30" rows="30" onBlur={(e) => handleForm(e)}></textarea><br />
                 <div class="btn"><span onClick={() => sendForm()}>Enviar</span></div>
                 </div> 
                  

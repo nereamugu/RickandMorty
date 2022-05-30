@@ -11,7 +11,7 @@ const SearchBar = (props) => {
     return (
         
         <div className="search-bar__container">
-            <h3 className="search-bar__title"> Buscador de personajes</h3>
+            <h2 className="search-bar__title"> Buscador de personajes</h2>
             <input className="search-bar__input"
                 type="text"
                 value={text}

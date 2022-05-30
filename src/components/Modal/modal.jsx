@@ -11,12 +11,12 @@ const Modal = (props) => {
 			<div className="popup__container">
 				<div className="popup__containerTitulo">
 					<span> X</span>
-					<h3 className="popup__title"> Ficha técnica</h3>
+					<h2 className="popup__title"> Ficha técnica</h2>
 				</div>
-				<p className="popup__nombre"> {name}</p>
-				<p className="popup__estado"> {status}</p>
-				<p className="popup__especie">{species}</p>
-				<p className="popup__genero"> {gender}</p>
+				<p className="popup__nombre"> <b>Nombre:</b>  {name}</p>
+				<p className="popup__estado"> <b>Estado:</b> {status}</p>
+				<p className="popup__especie"> <b>Especie:</b> {species}</p>
+				<p className="popup__genero"> <b>Género:</b>  {gender}</p>
                 
 			</div>
 		</div>
