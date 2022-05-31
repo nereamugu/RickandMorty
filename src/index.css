@@ -1,24 +1,27 @@
 *, *::after, *::before {
   box-sizing: border-box;
+  font-family: 'Futura PT' !important;
 }
 
 html, body, #root {
   height: 100%;
   width: 100%;
+  font-family: 'Futura PT' ;
 }
 
 
 body {
   margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
+  font-family: 'Futura PT' ;
+  /* font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
     'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
     sans-serif;
   -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
+  -moz-osx-font-smoothing: grayscale; */
 }
 
 code {
-  font-family: 'Futura PT';
+  font-family: 'Futura', sans-serif;
 }
 
 h1, h2, h3, h4, h5, h6 {

@@ -23,6 +23,7 @@
     padding: 8px 12px;
     margin-top: 10px;
     width: 320px;
+    background-color: white !important;
 }
 
 .search-bar__title{
